@@ -11,4 +11,11 @@ services:
        source: C:/shell/inputFile
        target: /csvserver/inputdata
 
-  
+  prometheus_monitor:
+     image: prom/prometheus:v2.22.0
+     volumes:
+       - type: bind
+         source: C:/shell/prometheus.yaml
+         target: /etc/prometheus/prometheus.yml
+     ports:
+       - 9090:9090
