@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  infracloud:
+    image: infracloudio/csvserver
+    ports:
+      - 9393:9300
+    environment:
+      - CSVSERVER_BORDER=Orange
+    volumes:
+     - type: bind
+       source: C:/shell/inputFile
+       target: /csvserver/inputdata
+
+  
